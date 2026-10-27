@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: Frontend_Deployment
+  labels:
+    app: TO_DO
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: frontend-service
+    template:
+      metadata:
+        labels:
+          app: frontend-service
+      spec:
+        containers:
+        - name: frontend
+          image: sanrose27/kubernetes-frontend:latest
+          ports: 
+            - containerPort: 80
+         
