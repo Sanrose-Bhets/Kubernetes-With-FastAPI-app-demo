@@ -10,4 +10,5 @@ app = FastAPI(title="Todos API", version="1.0.0")
 app.include_router(todos_router)
 
 static_dir = Path(__file__).resolve().parent.parent / "static"
-app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
+if static_dir.exists():
+    app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
