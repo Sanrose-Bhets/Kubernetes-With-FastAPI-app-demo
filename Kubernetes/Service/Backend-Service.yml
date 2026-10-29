@@ -1,12 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  app.kubernetes.io/name: backend-service
+  name: backend-service
   namepace: development-environment
+  labels:
+    app.kubernetes.io/name: Backend-Service
+    app.kubernetes.io/component: backend-api
+    app.kubernetes.io/part-of: To-Do-Application
 spec:
   selector:
     app.kubernetes.io/name: Todo-Backend
   ports:
   - protocol: TCP
     port: 8000
-    targetport: 8000
+    targetPort: 8000

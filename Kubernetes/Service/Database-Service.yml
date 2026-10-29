@@ -5,8 +5,8 @@ metadata:
   namespace: development-environment
 spec:
   selector:
-    app: database-service
+    app: mongodb
   ports:
   - protocol: TCP
     port: 27017
-    targetport: 27017
+    targetPort: 27017

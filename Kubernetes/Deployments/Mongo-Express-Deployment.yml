@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo-express
-  namepsace: development-environment
+  namespace: development-environment
   labels:
     app: mongo-express
 spec:
@@ -34,5 +34,5 @@ spec:
             - name: ME_CONFIG_MONGODB_SERVER
               valueFrom:
                 configMapKeyRef:
-                  name: database_configmap
+                  name: database-configmap
                   key: database_url  
