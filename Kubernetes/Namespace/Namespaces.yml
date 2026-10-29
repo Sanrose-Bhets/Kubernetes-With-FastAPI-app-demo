@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: demo-application-ns
+  labels:
+    name: demo-application
+    environment: dev
+    app.kubernetes.io/partof: To-Do-Application

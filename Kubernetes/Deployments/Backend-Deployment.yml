@@ -1,18 +1,25 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: Backend_Deployment
+  namespace: demo-application-ns
   labels:
-    app: TO_DO
+    app.kubernetes.io/name: Todo-Backend
+    app.kubernetes.io/component: backend-api
+    app.kubernetes.io/partof: To-Do-Application
 spec:
   replicas: 2
   selector: 
     matchLabels:
-      app: backend-service
+      app.kubernetes.io/name: Todo-Backend
+      app.kubernetes.io/component: backend-api
+      app.kubernetes.io/partof: To-Do-Application
     template:
       metadata:
         labels:
-          app: backend-service
+          app.kubernetes.io/name: Todo-Backend
+          app.kubernetes.io/component: backend-api
+          app.kubernetes.io/partof: To-Do-Application
       spec:
         containers:
         - name: backend
