@@ -18,7 +18,7 @@ spec:
       labels:
         app.kubernetes.io/name: todo-frontend
         app.kubernetes.io/component: frontend
-        app.kubnernetes.io/part-of: To-Do-Application
+        app.kubernetes.io/part-of: To-Do-Application
     spec:
       containers:
       - name: frontend

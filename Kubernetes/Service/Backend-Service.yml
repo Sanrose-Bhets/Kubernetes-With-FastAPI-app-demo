@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: backend-service
-  namepace: development-environment
+  namespace: development-environment
   labels:
     app.kubernetes.io/name: Backend-Service
     app.kubernetes.io/component: backend-api
